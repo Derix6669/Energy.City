@@ -113,22 +113,22 @@ export function AdminDashboard() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Content Header */}
-        <header className="border-b border-border bg-card px-6 py-4">
-          <h1 className="text-2xl font-bold">{getSectionTitle()}</h1>
-          <p className="text-sm text-muted-foreground mt-1">Централізоване управління мережею вугільних заводів</p>
+        <header className="border-b border-border bg-card px-3 md:px-6 py-3 md:py-4">
+          <h1 className="text-lg md:text-2xl font-bold">{getSectionTitle()}</h1>
+          <p className="text-xs md:text-sm text-muted-foreground mt-1">Централізоване управління мережею вугільних заводів</p>
         </header>
 
         {/* Key Metrics - показуємо тільки на головній сторінці */}
         {activeSection === "overview" && (
-          <div className="p-6 border-b border-border">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="p-3 md:p-6 border-b border-border">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Загальна Потужність</CardTitle>
+                  <CardTitle className="text-xs md:text-sm font-medium">Загальна Потужність</CardTitle>
                   <Zap className="h-4 w-4 text-chart-2" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{totalPower} МВт</div>
+                  <div className="text-lg md:text-2xl font-bold">{totalPower} МВт</div>
                   <p className="text-xs text-muted-foreground">з {totalCapacity} МВт максимальної</p>
                   <Progress value={(totalPower / totalCapacity) * 100} className="mt-2" />
                 </CardContent>
@@ -136,11 +136,11 @@ export function AdminDashboard() {
 
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Активні Заводи</CardTitle>
+                  <CardTitle className="text-xs md:text-sm font-medium">Активні Заводи</CardTitle>
                   <Factory className="h-4 w-4 text-chart-3" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{onlinePlants}</div>
+                  <div className="text-lg md:text-2xl font-bold">{onlinePlants}</div>
                   <p className="text-xs text-muted-foreground">з {plants.length} загалом</p>
                   <Progress value={(onlinePlants / plants.length) * 100} className="mt-2" />
                 </CardContent>
@@ -148,11 +148,11 @@ export function AdminDashboard() {
 
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Середня Ефективність</CardTitle>
+                  <CardTitle className="text-xs md:text-sm font-medium">Середня Ефективність</CardTitle>
                   <TrendingUp className="h-4 w-4 text-chart-1" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">
+                  <div className="text-lg md:text-2xl font-bold">
                     {Math.round(plants.reduce((sum, plant) => sum + plant.efficiency, 0) / plants.length)}%
                   </div>
                   <p className="text-xs text-muted-foreground">Операційна ефективність</p>
@@ -161,11 +161,11 @@ export function AdminDashboard() {
 
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Сповіщення</CardTitle>
+                  <CardTitle className="text-xs md:text-sm font-medium">Сповіщення</CardTitle>
                   <AlertTriangle className={`h-4 w-4 ${totalAlerts > 0 ? "text-chart-4" : "text-muted-foreground"}`} />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{totalAlerts}</div>
+                  <div className="text-lg md:text-2xl font-bold">{totalAlerts}</div>
                   <p className="text-xs text-muted-foreground">Активних попереджень</p>
                 </CardContent>
               </Card>
@@ -174,7 +174,7 @@ export function AdminDashboard() {
         )}
 
         {/* Main Content Area */}
-        <main className="flex-1 overflow-auto p-6">{renderContent()}</main>
+        <main className="flex-1 overflow-auto p-3 md:p-6">{renderContent()}</main>
       </div>
     </div>
   )

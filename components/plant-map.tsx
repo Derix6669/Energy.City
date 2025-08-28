@@ -97,6 +97,12 @@ export function PlantMap() {
       mapTypeControl: false,
       streetViewControl: false,
       fullscreenControl: true,
+      // Mobile optimizations
+      gestureHandling: "greedy",
+      zoomControl: true,
+      zoomControlOptions: {
+        position: g.maps.ControlPosition.RIGHT_BOTTOM,
+      },
     })
     setMap(m)
   }, [isLoaded, map])
@@ -219,44 +225,69 @@ export function PlantMap() {
   }, [visiblePlants])
 
   return (
-    <div className="space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h2 className="text-2xl font-bold">Карта Заводів</h2>
-          <p className="text-muted-foreground">Google Map з маркерами усіх поточних заводів</p>
+    <div className="space-y-4 md:space-y-6">
+      {/* Mobile-optimized header */}
+      <div className="space-y-3 md:space-y-0">
+        <div className="text-center md:text-left">
+          <h2 className="text-xl md:text-2xl font-bold">Карта Заводів</h2>
+          <p className="text-xs md:text-sm text-muted-foreground">Google Map з маркерами усіх поточних заводів</p>
         </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center gap-1 text-xs border border-border rounded px-2 py-1">
-            <label className="flex items-center gap-1 cursor-pointer"><input type="checkbox" checked={filterOnline} onChange={(e) => setFilterOnline(e.target.checked)} /><span style={{ backgroundColor: PALETTES[palette].online }} className="w-2 h-2 rounded-full inline-block"></span>Онлайн</label>
-            <label className="flex items-center gap-1 cursor-pointer ml-2"><input type="checkbox" checked={filterMaintenance} onChange={(e) => setFilterMaintenance(e.target.checked)} /><span style={{ backgroundColor: PALETTES[palette].maintenance }} className="w-2 h-2 rounded-full inline-block"></span>Сервіс</label>
-            <label className="flex items-center gap-1 cursor-pointer ml-2"><input type="checkbox" checked={filterOffline} onChange={(e) => setFilterOffline(e.target.checked)} /><span style={{ backgroundColor: PALETTES[palette].offline }} className="w-2 h-2 rounded-full inline-block"></span>Офлайн</label>
+        
+        {/* Mobile: Stack controls vertically, Desktop: Horizontal layout */}
+        <div className="space-y-3 md:space-y-0 md:flex md:items-center md:justify-between md:gap-3">
+          {/* Status filters - mobile optimized */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-2 text-xs border border-border rounded-lg px-3 py-2 bg-card/50">
+            <label className="flex items-center gap-1 cursor-pointer">
+              <input type="checkbox" checked={filterOnline} onChange={(e) => setFilterOnline(e.target.checked)} className="w-3 h-3" />
+              <span style={{ backgroundColor: PALETTES[palette].online }} className="w-2 h-2 rounded-full inline-block"></span>
+              <span className="hidden sm:inline">Онлайн</span>
+            </label>
+            <label className="flex items-center gap-1 cursor-pointer">
+              <input type="checkbox" checked={filterMaintenance} onChange={(e) => setFilterMaintenance(e.target.checked)} className="w-3 h-3" />
+              <span style={{ backgroundColor: PALETTES[palette].maintenance }} className="w-2 h-2 rounded-full inline-block"></span>
+              <span className="hidden sm:inline">Сервіс</span>
+            </label>
+            <label className="flex items-center gap-1 cursor-pointer">
+              <input type="checkbox" checked={filterOffline} onChange={(e) => setFilterOffline(e.target.checked)} className="w-3 h-3" />
+              <span style={{ backgroundColor: PALETTES[palette].offline }} className="w-2 h-2 rounded-full inline-block"></span>
+              <span className="hidden sm:inline">Офлайн</span>
+            </label>
           </div>
-          <div className="flex items-center gap-2">
-            <input
-              className="h-9 w-56 rounded-md border border-border bg-card px-3 text-sm"
-              placeholder="Пошук станції..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  const p = filteredData[0]
-                  flyToPlant(p)
-                }
-              }}
-            />
-            <button className="h-9 rounded-md border border-border bg-card px-3 text-sm" onClick={() => flyToPlant(filteredData[0])}>Знайти</button>
-            <button className="h-9 rounded-md border border-border bg-card px-3 text-sm" onClick={fitToAll}>Підігнати</button>
-            <div className="flex items-center gap-2 ml-2">
-              <span className="text-sm text-muted-foreground">Кольорова гама</span>
+
+          {/* Search and actions - mobile optimized */}
+          <div className="flex flex-col sm:flex-row gap-2">
+            <div className="flex gap-2">
+              <input
+                className="flex-1 h-9 rounded-md border border-border bg-card px-3 text-sm min-w-0"
+                placeholder="Пошук станції..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    const p = filteredData[0]
+                    flyToPlant(p)
+                  }
+                }}
+              />
+              <button className="h-9 px-3 rounded-md border border-border bg-card text-sm whitespace-nowrap" onClick={() => flyToPlant(filteredData[0])}>
+                <span className="hidden sm:inline">Знайти</span>
+                <span className="sm:hidden">🔍</span>
+              </button>
+            </div>
+            <div className="flex gap-2">
+              <button className="flex-1 sm:flex-none h-9 px-3 rounded-md border border-border bg-card text-sm" onClick={fitToAll}>
+                <span className="hidden sm:inline">Підігнати</span>
+                <span className="sm:hidden">📐</span>
+              </button>
               <select
-                className="h-9 rounded-md border border-border bg-card px-3 text-sm"
+                className="h-9 rounded-md border border-border bg-card px-2 text-xs"
                 value={palette}
                 onChange={(e) => setPalette(e.target.value as PaletteId)}
               >
-                <option value="default">Стандартна</option>
-                <option value="ocean">Ocean</option>
-                <option value="sunset">Sunset</option>
-                <option value="mono">Monochrome</option>
+                <option value="default">🎨</option>
+                <option value="ocean">🌊</option>
+                <option value="sunset">🌅</option>
+                <option value="mono">⚫</option>
               </select>
             </div>
           </div>
@@ -264,23 +295,36 @@ export function PlantMap() {
       </div>
 
       <Card>
-        <CardHeader>
-          <CardTitle className="text-lg">Географічне розміщення</CardTitle>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-base md:text-lg">Географічне розміщення</CardTitle>
         </CardHeader>
-        <CardContent>
-          <div className="relative h-[600px] w-full rounded-md overflow-hidden border border-border">
+        <CardContent className="p-0">
+          <div className="relative h-[400px] md:h-[600px] w-full rounded-md overflow-hidden border border-border">
+            {/* Mobile-optimized metrics panel */}
             {metrics && (
-              <div className="absolute top-3 left-3 z-10 bg-card/90 backdrop-blur rounded-md border border-border p-3 text-xs space-y-2 shadow">
-                <div className="flex items-center gap-2">
+              <div className="absolute top-2 left-2 right-2 md:top-3 md:left-3 md:right-auto z-10 bg-card/95 backdrop-blur rounded-md border border-border p-2 md:p-3 text-xs space-y-1 md:space-y-2 shadow max-w-[280px] md:max-w-none">
+                <div className="flex items-center justify-between">
                   <span className="font-medium">Видимі станції:</span>
-                  <Badge variant="secondary">{metrics.total}</Badge>
+                  <Badge variant="secondary" className="text-xs">{metrics.total}</Badge>
                 </div>
-                <div className="grid grid-cols-3 gap-2">
-                  <div className="flex items-center gap-1"><span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: PALETTES[palette].online }}></span>Онлайн {metrics.online}</div>
-                  <div className="flex items-center gap-1"><span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: PALETTES[palette].maintenance }}></span>Сервіс {metrics.maintenance}</div>
-                  <div className="flex items-center gap-1"><span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: PALETTES[palette].offline }}></span>Офлайн {metrics.offline}</div>
+                <div className="grid grid-cols-3 gap-1 md:gap-2 text-xs">
+                  <div className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: PALETTES[palette].online }}></span>
+                    <span className="hidden sm:inline">Онлайн</span>
+                    <span className="sm:hidden">О</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: PALETTES[palette].maintenance }}></span>
+                    <span className="hidden sm:inline">Сервіс</span>
+                    <span className="sm:hidden">С</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full inline-block" style={{ backgroundColor: PALETTES[palette].offline }}></span>
+                    <span className="hidden sm:inline">Офлайн</span>
+                    <span className="sm:hidden">В</span>
+                  </div>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-1 md:gap-2 text-xs">
                   <div><span className="text-muted-foreground">Навантаження:</span> {metrics.totalPower} МВт</div>
                   <div><span className="text-muted-foreground">Макс. потужн.:</span> {metrics.totalMax} МВт</div>
                   <div><span className="text-muted-foreground">Сер. ефект.:</span> {Number.isFinite(metrics.avgEff) ? metrics.avgEff : 0}%</div>
@@ -290,12 +334,12 @@ export function PlantMap() {
                   <div className="mt-2 border-t border-border pt-2">
                     <div className="font-medium truncate max-w-[240px]" title={selectedPlant.name}>{selectedPlant.name}</div>
                     <div className="text-muted-foreground truncate max-w-[240px]" title={selectedPlant.location}>{selectedPlant.location}</div>
-                    <div className="flex items-center gap-3 mt-1">
-                      <div className="text-xs">Статус: {selectedPlant.status}</div>
+                    <div className="flex items-center gap-3 mt-1 text-xs">
+                      <div>Статус: {selectedPlant.status}</div>
                       {selectedPlant.power != null && selectedPlant.maxPower != null && (
-                        <div className="text-xs">{selectedPlant.power}/{selectedPlant.maxPower} МВт</div>
+                        <div>{selectedPlant.power}/{selectedPlant.maxPower} МВт</div>
                       )}
-                      {selectedPlant.efficiency != null && <div className="text-xs">Ефект.: {selectedPlant.efficiency}%</div>}
+                      {selectedPlant.efficiency != null && <div>Ефект.: {selectedPlant.efficiency}%</div>}
                     </div>
                   </div>
                 )}
@@ -307,7 +351,7 @@ export function PlantMap() {
       </Card>
 
       {!apiKey && (
-        <div className="text-sm text-red-500">Відсутній API ключ. Додайте NEXT_PUBLIC_GOOGLE_MAPS_API_KEY у .env.local</div>
+        <div className="text-sm text-red-500 text-center md:text-left">Відсутній API ключ. Додайте NEXT_PUBLIC_GOOGLE_MAPS_API_KEY у .env.local</div>
       )}
 
       <Script

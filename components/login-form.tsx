@@ -1,109 +1,131 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Factory, Loader2 } from "lucide-react"
 import { useAuth } from "@/contexts/auth-context"
+import { Loader2, Shield, User, Lock } from "lucide-react"
 
 export function LoginForm() {
-  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
-  const { login, isLoading } = useAuth()
+  const { login } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!username.trim() || !password.trim()) {
+      setError("Будь ласка, заповніть всі поля")
+      return
+    }
+
+    setIsLoading(true)
     setError("")
 
-    const success = await login(email, password)
-    if (!success) {
-      setError("Невірний email або пароль")
+    try {
+      await login(username, password)
+    } catch (err) {
+      setError("Невірний логін або пароль")
+    } finally {
+      setIsLoading(false)
     }
   }
 
-  const demoCredentials = [
-    { email: "admin@coalplant.com", role: "Адміністратор", password: "admin123" },
-    { email: "plant1@coalplant.com", role: "Завод №1", password: "plant123" },
-  ]
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <div className="flex justify-center mb-4">
-            <Factory className="h-12 w-12 text-primary" />
-          </div>
-          <CardTitle className="text-2xl">Вхід до Системи</CardTitle>
-          <CardDescription>Система Управління Електромережею Вугільних Заводів</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                required
-              />
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="w-full max-w-md">
+        <Card className="border-0 shadow-2xl bg-card/95 backdrop-blur">
+          <CardHeader className="text-center space-y-4 pb-6">
+            <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+              <Shield className="w-8 h-8 text-primary" />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="password">Пароль</Label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-                required
-              />
+            <div>
+              <CardTitle className="text-2xl md:text-3xl font-bold">Система Управління</CardTitle>
+              <CardDescription className="text-sm md:text-base mt-2">
+                Електромережею Вугільних Заводів
+              </CardDescription>
             </div>
+          </CardHeader>
 
-            {error && (
-              <Alert variant="destructive">
-                <AlertDescription>{error}</AlertDescription>
-              </Alert>
-            )}
-
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Вхід...
-                </>
-              ) : (
-                "Увійти"
-              )}
-            </Button>
-          </form>
-
-          <div className="mt-6 pt-6 border-t">
-            <p className="text-sm text-muted-foreground mb-3">Демо облікові записи:</p>
-            <div className="space-y-2">
-              {demoCredentials.map((cred, index) => (
-                <div key={index} className="flex flex-col gap-1 text-xs">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">{cred.role}:</span>
-                    <span className="font-mono">{cred.email}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Пароль:</span>
-                    <span className="font-mono">{cred.password}</span>
-                  </div>
+          <CardContent className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="username" className="text-sm font-medium">
+                  Логін
+                </Label>
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    id="username"
+                    type="text"
+                    placeholder="Введіть логін"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    className="pl-10 h-11 md:h-12 text-base"
+                    disabled={isLoading}
+                  />
                 </div>
-              ))}
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="password" className="text-sm font-medium">
+                  Пароль
+                </Label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    id="password"
+                    type="password"
+                    placeholder="Введіть пароль"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="pl-10 h-11 md:h-12 text-base"
+                    disabled={isLoading}
+                  />
+                </div>
+              </div>
+
+              {error && (
+                <Alert variant="destructive" className="border-red-200 bg-red-50">
+                  <AlertDescription className="text-sm">{error}</AlertDescription>
+                </Alert>
+              )}
+
+              <Button
+                type="submit"
+                className="w-full h-11 md:h-12 text-base font-medium"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Вхід...
+                  </>
+                ) : (
+                  "Увійти в систему"
+                )}
+              </Button>
+            </form>
+
+            <div className="text-center">
+              <p className="text-xs md:text-sm text-muted-foreground">
+                Демо доступ: <span className="font-mono text-primary">admin</span> / <span className="font-mono text-primary">admin</span>
+              </p>
             </div>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+
+        {/* Footer */}
+        <div className="mt-6 text-center">
+          <p className="text-xs text-muted-foreground">
+            © 2024 Система Управління Електромережею. Всі права захищені.
+          </p>
+        </div>
+      </div>
     </div>
   )
 }

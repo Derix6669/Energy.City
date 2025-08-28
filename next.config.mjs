@@ -9,6 +9,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Server configuration for listening on all interfaces
+  experimental: {
+    serverComponentsExternalPackages: [],
+  },
 }
 
 export default nextConfig

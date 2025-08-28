@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Система Управління Електромережею",
   description: "Агрегація Вугільних Заводів",
   generator: "v0.app",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 }
 
 export default function RootLayout({
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
