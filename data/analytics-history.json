@@ -1,0 +1,130 @@
+{
+  "powerTrends": [
+    { "timestamp": "2025-01-10T00:00:00Z", "totalPower": 4200, "avgEfficiency": 87, "activePlants": 10 },
+    { "timestamp": "2025-01-10T04:00:00Z", "totalPower": 3800, "avgEfficiency": 89, "activePlants": 9 },
+    { "timestamp": "2025-01-10T08:00:00Z", "totalPower": 5600, "avgEfficiency": 91, "activePlants": 11 },
+    { "timestamp": "2025-01-10T12:00:00Z", "totalPower": 6800, "avgEfficiency": 88, "activePlants": 11 },
+    { "timestamp": "2025-01-10T16:00:00Z", "totalPower": 7200, "avgEfficiency": 90, "activePlants": 11 },
+    { "timestamp": "2025-01-10T20:00:00Z", "totalPower": 5900, "avgEfficiency": 86, "activePlants": 10 }
+  ],
+  "monthlyFinancials": [
+    { "month": "2024-07", "revenue": 7200000, "costs": 5400000, "profit": 1800000, "transactions": 435 },
+    { "month": "2024-08", "revenue": 6600000, "costs": 5100000, "profit": 1500000, "transactions": 396 },
+    { "month": "2024-09", "revenue": 8400000, "costs": 5700000, "profit": 2700000, "transactions": 501 },
+    { "month": "2024-10", "revenue": 9600000, "costs": 6300000, "profit": 3300000, "transactions": 567 },
+    { "month": "2024-11", "revenue": 8700000, "costs": 6000000, "profit": 2700000, "transactions": 468 },
+    { "month": "2024-12", "revenue": 9300000, "costs": 6600000, "profit": 2700000, "transactions": 534 }
+  ],
+  "plantPerformance": [
+    {
+      "plantId": "plant1",
+      "month": "2024-12",
+      "uptime": 98.2,
+      "efficiency": 87,
+      "maintenanceHours": 12,
+      "energyProduced": 15600
+    },
+    {
+      "plantId": "plant2",
+      "month": "2024-12",
+      "uptime": 96.8,
+      "efficiency": 92,
+      "maintenanceHours": 8,
+      "energyProduced": 14200
+    },
+    {
+      "plantId": "plant3",
+      "month": "2024-12",
+      "uptime": 45.0,
+      "efficiency": 0,
+      "maintenanceHours": 360,
+      "energyProduced": 3200
+    },
+    {
+      "plantId": "plant4",
+      "month": "2024-12",
+      "uptime": 99.1,
+      "efficiency": 89,
+      "maintenanceHours": 6,
+      "energyProduced": 17800
+    },
+    {
+      "plantId": "plant5",
+      "month": "2024-12",
+      "uptime": 97.5,
+      "efficiency": 91,
+      "maintenanceHours": 18,
+      "energyProduced": 22400
+    },
+    {
+      "plantId": "plant6",
+      "month": "2024-12",
+      "uptime": 94.2,
+      "efficiency": 85,
+      "maintenanceHours": 42,
+      "energyProduced": 13600
+    },
+    {
+      "plantId": "plant7",
+      "month": "2024-12",
+      "uptime": 98.8,
+      "efficiency": 88,
+      "maintenanceHours": 9,
+      "energyProduced": 9800
+    },
+    {
+      "plantId": "plant8",
+      "month": "2024-12",
+      "uptime": 99.3,
+      "efficiency": 90,
+      "maintenanceHours": 5,
+      "energyProduced": 19200
+    },
+    {
+      "plantId": "plant9",
+      "month": "2024-12",
+      "uptime": 15.0,
+      "efficiency": 0,
+      "maintenanceHours": 612,
+      "energyProduced": 1800
+    },
+    {
+      "plantId": "plant10",
+      "month": "2024-12",
+      "uptime": 96.7,
+      "efficiency": 86,
+      "maintenanceHours": 24,
+      "energyProduced": 7200
+    },
+    {
+      "plantId": "plant11",
+      "month": "2024-12",
+      "uptime": 95.1,
+      "efficiency": 83,
+      "maintenanceHours": 36,
+      "energyProduced": 11400
+    },
+    {
+      "plantId": "plant12",
+      "month": "2024-12",
+      "uptime": 98.4,
+      "efficiency": 87,
+      "maintenanceHours": 12,
+      "energyProduced": 8600
+    }
+  ],
+  "energyDistribution": [
+    { "plantId": "plant1", "percentage": 11.2, "energyProduced": 15600, "energySold": 8900, "energyConsumed": 6700 },
+    { "plantId": "plant2", "percentage": 10.2, "energyProduced": 14200, "energySold": 7800, "energyConsumed": 6400 },
+    { "plantId": "plant3", "percentage": 2.3, "energyProduced": 3200, "energySold": 1200, "energyConsumed": 2000 },
+    { "plantId": "plant4", "percentage": 12.8, "energyProduced": 17800, "energySold": 9200, "energyConsumed": 8600 },
+    { "plantId": "plant5", "percentage": 16.1, "energyProduced": 22400, "energySold": 12800, "energyConsumed": 9600 },
+    { "plantId": "plant6", "percentage": 9.8, "energyProduced": 13600, "energySold": 7200, "energyConsumed": 6400 },
+    { "plantId": "plant7", "percentage": 7.0, "energyProduced": 9800, "energySold": 5400, "energyConsumed": 4400 },
+    { "plantId": "plant8", "percentage": 13.8, "energyProduced": 19200, "energySold": 10600, "energyConsumed": 8600 },
+    { "plantId": "plant9", "percentage": 1.3, "energyProduced": 1800, "energySold": 600, "energyConsumed": 1200 },
+    { "plantId": "plant10", "percentage": 5.2, "energyProduced": 7200, "energySold": 3800, "energyConsumed": 3400 },
+    { "plantId": "plant11", "percentage": 8.2, "energyProduced": 11400, "energySold": 6200, "energyConsumed": 5200 },
+    { "plantId": "plant12", "percentage": 6.2, "energyProduced": 8600, "energySold": 4600, "energyConsumed": 4000 }
+  ]
+}

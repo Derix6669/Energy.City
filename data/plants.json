@@ -1,0 +1,328 @@
+{
+  "plants": [
+    {
+      "id": "plant1",
+      "name": "Криворізький металургійний завод №1",
+      "location": "Кривий Ріг, Дніпропетровська область",
+      "coordinates": { "lat": 47.9077, "lng": 33.3916 },
+      "status": "online",
+      "power": 850,
+      "maxPower": 1000,
+      "efficiency": 87,
+      "batteryLevel": 65,
+      "alerts": 0,
+      "operationalSince": "1955-03-15",
+      "lastMaintenance": "2024-12-01",
+      "nextMaintenance": "2025-03-01",
+      "contact": {
+        "manager": "Іван Петренко",
+        "phone": "+380 56 123-45-67",
+        "email": "i.petrenko@krivbas-steel.ua"
+      },
+      "specifications": {
+        "fuelType": "coal",
+        "turbineCount": 4,
+        "boilerType": "pulverized_coal",
+        "coolingSystem": "water",
+        "emissionControl": "electrostatic_precipitator"
+      }
+    },
+    {
+      "id": "plant2",
+      "name": "Донецький коксохімічний завод №3",
+      "location": "Донецьк, Донецька область",
+      "coordinates": { "lat": 48.0159, "lng": 37.8028 },
+      "status": "online",
+      "power": 720,
+      "maxPower": 900,
+      "efficiency": 92,
+      "batteryLevel": 78,
+      "alerts": 1,
+      "operationalSince": "1963-08-22",
+      "lastMaintenance": "2024-11-15",
+      "nextMaintenance": "2025-02-15",
+      "contact": {
+        "manager": "Олександр Коваленко",
+        "phone": "+380 62 234-56-78",
+        "email": "o.kovalenko@donbas-coke.ua"
+      },
+      "specifications": {
+        "fuelType": "coke_gas",
+        "turbineCount": 3,
+        "boilerType": "waste_heat",
+        "coolingSystem": "air",
+        "emissionControl": "bag_filter"
+      }
+    },
+    {
+      "id": "plant3",
+      "name": "Запорізький алюмінієвий завод №2",
+      "location": "Запоріжжя, Запорізька область",
+      "coordinates": { "lat": 47.8388, "lng": 35.1396 },
+      "status": "maintenance",
+      "power": 0,
+      "maxPower": 1200,
+      "efficiency": 0,
+      "batteryLevel": 45,
+      "alerts": 3,
+      "operationalSince": "1971-05-10",
+      "lastMaintenance": "2025-01-05",
+      "nextMaintenance": "2025-01-20",
+      "contact": {
+        "manager": "Марія Сидоренко",
+        "phone": "+380 61 345-67-89",
+        "email": "m.sydorenko@zaporozhye-al.ua"
+      },
+      "specifications": {
+        "fuelType": "natural_gas",
+        "turbineCount": 5,
+        "boilerType": "combined_cycle",
+        "coolingSystem": "water",
+        "emissionControl": "selective_catalytic_reduction"
+      }
+    },
+    {
+      "id": "plant4",
+      "name": "Маріупольський металургійний комбінат",
+      "location": "Маріуполь, Донецька область",
+      "coordinates": { "lat": 47.0971, "lng": 37.5494 },
+      "status": "online",
+      "power": 950,
+      "maxPower": 1100,
+      "efficiency": 89,
+      "batteryLevel": 82,
+      "alerts": 0,
+      "operationalSince": "1933-11-28",
+      "lastMaintenance": "2024-10-20",
+      "nextMaintenance": "2025-04-20",
+      "contact": {
+        "manager": "Сергій Мельник",
+        "phone": "+380 629 456-78-90",
+        "email": "s.melnyk@mariupol-steel.ua"
+      },
+      "specifications": {
+        "fuelType": "coal",
+        "turbineCount": 6,
+        "boilerType": "circulating_fluidized_bed",
+        "coolingSystem": "hybrid",
+        "emissionControl": "wet_scrubber"
+      }
+    },
+    {
+      "id": "plant5",
+      "name": "Київська ТЕС-5",
+      "location": "Київ, Київська область",
+      "coordinates": { "lat": 50.4501, "lng": 30.5234 },
+      "status": "online",
+      "power": 1150,
+      "maxPower": 1300,
+      "efficiency": 91,
+      "batteryLevel": 88,
+      "alerts": 0,
+      "operationalSince": "1965-09-12",
+      "lastMaintenance": "2024-12-10",
+      "nextMaintenance": "2025-03-10",
+      "contact": {
+        "manager": "Олена Шевченко",
+        "phone": "+380 44 567-89-01",
+        "email": "o.shevchenko@kyiv-tes.ua"
+      },
+      "specifications": {
+        "fuelType": "natural_gas",
+        "turbineCount": 4,
+        "boilerType": "combined_cycle",
+        "coolingSystem": "water",
+        "emissionControl": "low_nox_burner"
+      }
+    },
+    {
+      "id": "plant6",
+      "name": "Харківська ТЕЦ-3",
+      "location": "Харків, Харківська область",
+      "coordinates": { "lat": 49.9935, "lng": 36.2304 },
+      "status": "online",
+      "power": 680,
+      "maxPower": 800,
+      "efficiency": 85,
+      "batteryLevel": 72,
+      "alerts": 2,
+      "operationalSince": "1958-04-18",
+      "lastMaintenance": "2024-11-25",
+      "nextMaintenance": "2025-02-25",
+      "contact": {
+        "manager": "Андрій Кравченко",
+        "phone": "+380 57 678-90-12",
+        "email": "a.kravchenko@kharkiv-tec.ua"
+      },
+      "specifications": {
+        "fuelType": "coal",
+        "turbineCount": 3,
+        "boilerType": "pulverized_coal",
+        "coolingSystem": "air",
+        "emissionControl": "electrostatic_precipitator"
+      }
+    },
+    {
+      "id": "plant7",
+      "name": "Львівська ТЕЦ-1",
+      "location": "Львів, Львівська область",
+      "coordinates": { "lat": 49.8397, "lng": 24.0297 },
+      "status": "online",
+      "power": 420,
+      "maxPower": 500,
+      "efficiency": 88,
+      "batteryLevel": 65,
+      "alerts": 1,
+      "operationalSince": "1962-07-03",
+      "lastMaintenance": "2024-12-05",
+      "nextMaintenance": "2025-03-05",
+      "contact": {
+        "manager": "Тарас Лисенко",
+        "phone": "+380 32 789-01-23",
+        "email": "t.lysenko@lviv-tec.ua"
+      },
+      "specifications": {
+        "fuelType": "natural_gas",
+        "turbineCount": 2,
+        "boilerType": "water_tube",
+        "coolingSystem": "water",
+        "emissionControl": "low_nox_burner"
+      }
+    },
+    {
+      "id": "plant8",
+      "name": "Одеська ТЕС-2",
+      "location": "Одеса, Одеська область",
+      "coordinates": { "lat": 46.4825, "lng": 30.7233 },
+      "status": "online",
+      "power": 890,
+      "maxPower": 1000,
+      "efficiency": 90,
+      "batteryLevel": 80,
+      "alerts": 0,
+      "operationalSince": "1969-11-14",
+      "lastMaintenance": "2024-10-30",
+      "nextMaintenance": "2025-01-30",
+      "contact": {
+        "manager": "Наталія Морозова",
+        "phone": "+380 48 890-12-34",
+        "email": "n.morozova@odesa-tes.ua"
+      },
+      "specifications": {
+        "fuelType": "natural_gas",
+        "turbineCount": 4,
+        "boilerType": "combined_cycle",
+        "coolingSystem": "seawater",
+        "emissionControl": "selective_catalytic_reduction"
+      }
+    },
+    {
+      "id": "plant9",
+      "name": "Полтавська ТЕЦ-4",
+      "location": "Полтава, Полтавська область",
+      "coordinates": { "lat": 49.5883, "lng": 34.5514 },
+      "status": "maintenance",
+      "power": 0,
+      "maxPower": 600,
+      "efficiency": 0,
+      "batteryLevel": 35,
+      "alerts": 4,
+      "operationalSince": "1975-02-28",
+      "lastMaintenance": "2025-01-08",
+      "nextMaintenance": "2025-01-25",
+      "contact": {
+        "manager": "Віктор Гончаренко",
+        "phone": "+380 532 901-23-45",
+        "email": "v.goncharenko@poltava-tec.ua"
+      },
+      "specifications": {
+        "fuelType": "coal",
+        "turbineCount": 2,
+        "boilerType": "fluidized_bed",
+        "coolingSystem": "air",
+        "emissionControl": "bag_filter"
+      }
+    },
+    {
+      "id": "plant10",
+      "name": "Вінницька ТЕЦ-2",
+      "location": "Вінниця, Вінницька область",
+      "coordinates": { "lat": 49.2331, "lng": 28.4682 },
+      "status": "online",
+      "power": 340,
+      "maxPower": 400,
+      "efficiency": 86,
+      "batteryLevel": 70,
+      "alerts": 1,
+      "operationalSince": "1980-06-15",
+      "lastMaintenance": "2024-11-20",
+      "nextMaintenance": "2025-02-20",
+      "contact": {
+        "manager": "Ірина Ткаченко",
+        "phone": "+380 432 012-34-56",
+        "email": "i.tkachenko@vinnytsia-tec.ua"
+      },
+      "specifications": {
+        "fuelType": "biomass",
+        "turbineCount": 2,
+        "boilerType": "biomass_fired",
+        "coolingSystem": "water",
+        "emissionControl": "cyclone_separator"
+      }
+    },
+    {
+      "id": "plant11",
+      "name": "Черкаська ТЕС-1",
+      "location": "Черкаси, Черкаська область",
+      "coordinates": { "lat": 49.4445, "lng": 32.0597 },
+      "status": "online",
+      "power": 520,
+      "maxPower": 650,
+      "efficiency": 83,
+      "batteryLevel": 68,
+      "alerts": 2,
+      "operationalSince": "1967-12-08",
+      "lastMaintenance": "2024-12-15",
+      "nextMaintenance": "2025-03-15",
+      "contact": {
+        "manager": "Олексій Бондаренко",
+        "phone": "+380 472 123-45-67",
+        "email": "o.bondarenko@cherkasy-tes.ua"
+      },
+      "specifications": {
+        "fuelType": "coal",
+        "turbineCount": 3,
+        "boilerType": "pulverized_coal",
+        "coolingSystem": "water",
+        "emissionControl": "wet_scrubber"
+      }
+    },
+    {
+      "id": "plant12",
+      "name": "Житомирська ТЕЦ-3",
+      "location": "Житомир, Житомирська область",
+      "coordinates": { "lat": 50.2649, "lng": 28.6767 },
+      "status": "online",
+      "power": 380,
+      "maxPower": 450,
+      "efficiency": 87,
+      "batteryLevel": 75,
+      "alerts": 0,
+      "operationalSince": "1973-03-22",
+      "lastMaintenance": "2024-11-10",
+      "nextMaintenance": "2025-02-10",
+      "contact": {
+        "manager": "Світлана Романенко",
+        "phone": "+380 412 234-56-78",
+        "email": "s.romanenko@zhytomyr-tec.ua"
+      },
+      "specifications": {
+        "fuelType": "natural_gas",
+        "turbineCount": 2,
+        "boilerType": "water_tube",
+        "coolingSystem": "air",
+        "emissionControl": "low_nox_burner"
+      }
+    }
+  ]
+}

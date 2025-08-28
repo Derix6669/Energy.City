@@ -1,0 +1,708 @@
+{
+  "equipment": [
+    {
+      "id": "gen-001",
+      "plantId": "plant1",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-200",
+      "manufacturer": "Турбоатом",
+      "model": "ТГВ-200-2М",
+      "capacity": 200,
+      "status": "online",
+      "efficiency": 89,
+      "operatingHours": 45230,
+      "lastMaintenance": "2024-11-10",
+      "nextMaintenance": "2025-05-10",
+      "specifications": {
+        "voltage": "15.75 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "hydrogen",
+        "weight": "145 тонн"
+      }
+    },
+    {
+      "id": "gen-002",
+      "plantId": "plant1",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-300",
+      "manufacturer": "Електросила",
+      "model": "ТГВ-300-2У3",
+      "capacity": 300,
+      "status": "online",
+      "efficiency": 91,
+      "operatingHours": 38750,
+      "lastMaintenance": "2024-09-15",
+      "nextMaintenance": "2025-03-15",
+      "specifications": {
+        "voltage": "20 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "water",
+        "weight": "180 тонн"
+      }
+    },
+    {
+      "id": "bat-001",
+      "plantId": "plant1",
+      "type": "battery",
+      "name": "Акумуляторна батарея Tesla Megapack",
+      "manufacturer": "Tesla",
+      "model": "Megapack 2XL",
+      "capacity": 50,
+      "currentCharge": 32.5,
+      "status": "charging",
+      "efficiency": 95,
+      "cycleCount": 1250,
+      "maxCycles": 4000,
+      "lastMaintenance": "2024-12-01",
+      "nextMaintenance": "2025-06-01",
+      "specifications": {
+        "voltage": "800 В",
+        "chemistry": "LiFePO4",
+        "dimensions": "12.2 x 2.6 x 2.6 м",
+        "weight": "23 тонни"
+      }
+    },
+    {
+      "id": "gen-003",
+      "plantId": "plant2",
+      "type": "generator",
+      "name": "Газотурбінний генератор ГТГ-110",
+      "manufacturer": "Зоря-Машпроект",
+      "model": "ГТГ-110-750",
+      "capacity": 110,
+      "status": "online",
+      "efficiency": 94,
+      "operatingHours": 28900,
+      "lastMaintenance": "2024-10-05",
+      "nextMaintenance": "2025-04-05",
+      "specifications": {
+        "voltage": "10.5 кВ",
+        "frequency": "50 Гц",
+        "fuelType": "natural_gas",
+        "weight": "85 тонн"
+      }
+    },
+    {
+      "id": "bat-002",
+      "plantId": "plant2",
+      "type": "battery",
+      "name": "Промислова батарея BYD",
+      "manufacturer": "BYD",
+      "model": "Battery-Box Commercial",
+      "capacity": 75,
+      "currentCharge": 58.5,
+      "status": "discharging",
+      "efficiency": 93,
+      "cycleCount": 890,
+      "maxCycles": 6000,
+      "lastMaintenance": "2024-11-20",
+      "nextMaintenance": "2025-05-20",
+      "specifications": {
+        "voltage": "1000 В",
+        "chemistry": "LiFePO4",
+        "dimensions": "8.5 x 2.2 x 2.2 м",
+        "weight": "18 тонн"
+      }
+    },
+    {
+      "id": "gen-004",
+      "plantId": "plant3",
+      "type": "generator",
+      "name": "Парогенератор ПГВ-440",
+      "manufacturer": "Атоммаш",
+      "model": "ПГВ-440М",
+      "capacity": 440,
+      "status": "maintenance",
+      "efficiency": 0,
+      "operatingHours": 52100,
+      "lastMaintenance": "2025-01-05",
+      "nextMaintenance": "2025-01-20",
+      "specifications": {
+        "voltage": "24 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "water",
+        "weight": "220 тонн"
+      }
+    },
+    {
+      "id": "bat-003",
+      "plantId": "plant3",
+      "type": "battery",
+      "name": "Енергосховище CATL",
+      "manufacturer": "CATL",
+      "model": "EnerC Pro",
+      "capacity": 120,
+      "currentCharge": 54,
+      "status": "standby",
+      "efficiency": 94,
+      "cycleCount": 1580,
+      "maxCycles": 8000,
+      "lastMaintenance": "2024-12-20",
+      "nextMaintenance": "2025-06-20",
+      "specifications": {
+        "voltage": "1500 В",
+        "chemistry": "LiFePO4",
+        "dimensions": "15 x 3 x 3 м",
+        "weight": "35 тонн"
+      }
+    },
+    {
+      "id": "gen-005",
+      "plantId": "plant4",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-500",
+      "manufacturer": "Турбоатом",
+      "model": "ТГВ-500-2У3",
+      "capacity": 500,
+      "status": "online",
+      "efficiency": 92,
+      "operatingHours": 67890,
+      "lastMaintenance": "2024-10-20",
+      "nextMaintenance": "2025-04-20",
+      "specifications": {
+        "voltage": "24 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "hydrogen",
+        "weight": "280 тонн"
+      }
+    },
+    {
+      "id": "gen-006",
+      "plantId": "plant4",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-320",
+      "manufacturer": "Електросила",
+      "model": "ТГВ-320-2М",
+      "capacity": 320,
+      "status": "online",
+      "efficiency": 90,
+      "operatingHours": 45600,
+      "lastMaintenance": "2024-11-05",
+      "nextMaintenance": "2025-05-05",
+      "specifications": {
+        "voltage": "20 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "water",
+        "weight": "195 тонн"
+      }
+    },
+    {
+      "id": "bat-004",
+      "plantId": "plant4",
+      "type": "battery",
+      "name": "Промислова батарея Samsung SDI",
+      "manufacturer": "Samsung SDI",
+      "model": "ESS-3000",
+      "capacity": 90,
+      "currentCharge": 73.8,
+      "status": "online",
+      "efficiency": 96,
+      "cycleCount": 2100,
+      "maxCycles": 10000,
+      "lastMaintenance": "2024-09-30",
+      "nextMaintenance": "2025-03-30",
+      "specifications": {
+        "voltage": "1200 В",
+        "chemistry": "NCM",
+        "dimensions": "10 x 2.5 x 2.5 м",
+        "weight": "25 тонн"
+      }
+    },
+    {
+      "id": "gen-007",
+      "plantId": "plant5",
+      "type": "generator",
+      "name": "Газотурбінний генератор Siemens",
+      "manufacturer": "Siemens",
+      "model": "SGT-800",
+      "capacity": 450,
+      "status": "online",
+      "efficiency": 95,
+      "operatingHours": 32100,
+      "lastMaintenance": "2024-12-10",
+      "nextMaintenance": "2025-06-10",
+      "specifications": {
+        "voltage": "22 кВ",
+        "frequency": "50 Гц",
+        "fuelType": "natural_gas",
+        "weight": "165 тонн"
+      }
+    },
+    {
+      "id": "gen-008",
+      "plantId": "plant5",
+      "type": "generator",
+      "name": "Парогенератор ПГВ-350",
+      "manufacturer": "Турбоатом",
+      "model": "ПГВ-350-2У3",
+      "capacity": 350,
+      "status": "online",
+      "efficiency": 93,
+      "operatingHours": 41200,
+      "lastMaintenance": "2024-11-15",
+      "nextMaintenance": "2025-05-15",
+      "specifications": {
+        "voltage": "20 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "water",
+        "weight": "210 тонн"
+      }
+    },
+    {
+      "id": "bat-005",
+      "plantId": "plant5",
+      "type": "battery",
+      "name": "Еко-батарея Sonnen",
+      "manufacturer": "Sonnen",
+      "model": "ecoLinx Commercial",
+      "capacity": 150,
+      "currentCharge": 132,
+      "status": "online",
+      "efficiency": 97,
+      "cycleCount": 1890,
+      "maxCycles": 12000,
+      "lastMaintenance": "2024-10-25",
+      "nextMaintenance": "2025-04-25",
+      "specifications": {
+        "voltage": "1600 В",
+        "chemistry": "NCM",
+        "dimensions": "18 x 3.5 x 3.5 м",
+        "weight": "42 тонни"
+      }
+    },
+    {
+      "id": "gen-009",
+      "plantId": "plant6",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-200",
+      "manufacturer": "Електросила",
+      "model": "ТГВ-200-2М",
+      "capacity": 200,
+      "status": "online",
+      "efficiency": 87,
+      "operatingHours": 58900,
+      "lastMaintenance": "2024-11-25",
+      "nextMaintenance": "2025-05-25",
+      "specifications": {
+        "voltage": "15.75 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "air",
+        "weight": "145 тонн"
+      }
+    },
+    {
+      "id": "gen-010",
+      "plantId": "plant6",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-250",
+      "manufacturer": "Турбоатом",
+      "model": "ТГВ-250-2У3",
+      "capacity": 250,
+      "status": "maintenance",
+      "efficiency": 0,
+      "operatingHours": 62300,
+      "lastMaintenance": "2025-01-10",
+      "nextMaintenance": "2025-01-25",
+      "specifications": {
+        "voltage": "18 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "hydrogen",
+        "weight": "165 тонн"
+      }
+    },
+    {
+      "id": "bat-006",
+      "plantId": "plant6",
+      "type": "battery",
+      "name": "Акумуляторна система Fluence",
+      "manufacturer": "Fluence",
+      "model": "Gridstack Pro",
+      "capacity": 80,
+      "currentCharge": 57.6,
+      "status": "online",
+      "efficiency": 92,
+      "cycleCount": 2450,
+      "maxCycles": 7000,
+      "lastMaintenance": "2024-12-05",
+      "nextMaintenance": "2025-06-05",
+      "specifications": {
+        "voltage": "1000 В",
+        "chemistry": "LiFePO4",
+        "dimensions": "9 x 2.8 x 2.8 м",
+        "weight": "22 тонни"
+      }
+    },
+    {
+      "id": "gen-011",
+      "plantId": "plant7",
+      "type": "generator",
+      "name": "Газотурбінний генератор GE",
+      "manufacturer": "General Electric",
+      "model": "LM2500+G4",
+      "capacity": 180,
+      "status": "online",
+      "efficiency": 91,
+      "operatingHours": 25600,
+      "lastMaintenance": "2024-12-05",
+      "nextMaintenance": "2025-06-05",
+      "specifications": {
+        "voltage": "13.8 кВ",
+        "frequency": "50 Гц",
+        "fuelType": "natural_gas",
+        "weight": "95 тонн"
+      }
+    },
+    {
+      "id": "gen-012",
+      "plantId": "plant7",
+      "type": "generator",
+      "name": "Парогенератор ПГВ-150",
+      "manufacturer": "Електросила",
+      "model": "ПГВ-150-2М",
+      "capacity": 150,
+      "status": "online",
+      "efficiency": 89,
+      "operatingHours": 34800,
+      "lastMaintenance": "2024-10-20",
+      "nextMaintenance": "2025-04-20",
+      "specifications": {
+        "voltage": "12 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "water",
+        "weight": "120 тонн"
+      }
+    },
+    {
+      "id": "bat-007",
+      "plantId": "plant7",
+      "type": "battery",
+      "name": "Енергосховище Panasonic",
+      "manufacturer": "Panasonic",
+      "model": "EverVolt Commercial",
+      "capacity": 60,
+      "currentCharge": 39,
+      "status": "charging",
+      "efficiency": 94,
+      "cycleCount": 1650,
+      "maxCycles": 9000,
+      "lastMaintenance": "2024-11-10",
+      "nextMaintenance": "2025-05-10",
+      "specifications": {
+        "voltage": "800 В",
+        "chemistry": "LiFePO4",
+        "dimensions": "7.5 x 2.2 x 2.2 м",
+        "weight": "16 тонн"
+      }
+    },
+    {
+      "id": "gen-013",
+      "plantId": "plant8",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-320",
+      "manufacturer": "Електросила",
+      "model": "ТГВ-320-2У3",
+      "capacity": 320,
+      "status": "online",
+      "efficiency": 94,
+      "operatingHours": 38900,
+      "lastMaintenance": "2024-10-30",
+      "nextMaintenance": "2025-04-30",
+      "specifications": {
+        "voltage": "20 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "seawater",
+        "weight": "195 тонн"
+      }
+    },
+    {
+      "id": "gen-014",
+      "plantId": "plant8",
+      "type": "generator",
+      "name": "Газотурбінний генератор Mitsubishi",
+      "manufacturer": "Mitsubishi Power",
+      "model": "M501JAC",
+      "capacity": 280,
+      "status": "online",
+      "efficiency": 96,
+      "operatingHours": 29500,
+      "lastMaintenance": "2024-11-20",
+      "nextMaintenance": "2025-05-20",
+      "specifications": {
+        "voltage": "18 кВ",
+        "frequency": "50 Гц",
+        "fuelType": "natural_gas",
+        "weight": "125 тонн"
+      }
+    },
+    {
+      "id": "bat-008",
+      "plantId": "plant8",
+      "type": "battery",
+      "name": "Морська батарея Saft",
+      "manufacturer": "Saft",
+      "model": "Intensium Max Marine",
+      "capacity": 100,
+      "currentCharge": 80,
+      "status": "online",
+      "efficiency": 95,
+      "cycleCount": 1200,
+      "maxCycles": 15000,
+      "lastMaintenance": "2024-09-15",
+      "nextMaintenance": "2025-03-15",
+      "specifications": {
+        "voltage": "1400 В",
+        "chemistry": "Li-ion",
+        "dimensions": "12 x 3 x 3 м",
+        "weight": "28 тонн"
+      }
+    },
+    {
+      "id": "gen-015",
+      "plantId": "plant9",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-180",
+      "manufacturer": "Турбоатом",
+      "model": "ТГВ-180-2М",
+      "capacity": 180,
+      "status": "maintenance",
+      "efficiency": 0,
+      "operatingHours": 71200,
+      "lastMaintenance": "2025-01-08",
+      "nextMaintenance": "2025-01-25",
+      "specifications": {
+        "voltage": "15 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "air",
+        "weight": "135 тонн"
+      }
+    },
+    {
+      "id": "gen-016",
+      "plantId": "plant9",
+      "type": "generator",
+      "name": "Парогенератор ПГВ-220",
+      "manufacturer": "Електросила",
+      "model": "ПГВ-220-2У3",
+      "capacity": 220,
+      "status": "maintenance",
+      "efficiency": 0,
+      "operatingHours": 68900,
+      "lastMaintenance": "2025-01-12",
+      "nextMaintenance": "2025-01-28",
+      "specifications": {
+        "voltage": "16 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "water",
+        "weight": "155 тонн"
+      }
+    },
+    {
+      "id": "bat-009",
+      "plantId": "plant9",
+      "type": "battery",
+      "name": "Резервна батарея Kokam",
+      "manufacturer": "Kokam",
+      "model": "ESS-3MWh",
+      "capacity": 70,
+      "currentCharge": 24.5,
+      "status": "standby",
+      "efficiency": 91,
+      "cycleCount": 3200,
+      "maxCycles": 5000,
+      "lastMaintenance": "2024-12-20",
+      "nextMaintenance": "2025-06-20",
+      "specifications": {
+        "voltage": "900 В",
+        "chemistry": "LiCoO2",
+        "dimensions": "8 x 2.5 x 2.5 м",
+        "weight": "20 тонн"
+      }
+    },
+    {
+      "id": "gen-017",
+      "plantId": "plant10",
+      "type": "generator",
+      "name": "Біомасовий генератор Andritz",
+      "manufacturer": "Andritz",
+      "model": "BFB-150",
+      "capacity": 150,
+      "status": "online",
+      "efficiency": 88,
+      "operatingHours": 18900,
+      "lastMaintenance": "2024-11-20",
+      "nextMaintenance": "2025-05-20",
+      "specifications": {
+        "voltage": "12 кВ",
+        "frequency": "50 Гц",
+        "fuelType": "biomass",
+        "weight": "110 тонн"
+      }
+    },
+    {
+      "id": "gen-018",
+      "plantId": "plant10",
+      "type": "generator",
+      "name": "Парогенератор ПГВ-120",
+      "manufacturer": "Турбоатом",
+      "model": "ПГВ-120-2М",
+      "capacity": 120,
+      "status": "online",
+      "efficiency": 86,
+      "operatingHours": 22100,
+      "lastMaintenance": "2024-10-15",
+      "nextMaintenance": "2025-04-15",
+      "specifications": {
+        "voltage": "10.5 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "air",
+        "weight": "95 тонн"
+      }
+    },
+    {
+      "id": "bat-010",
+      "plantId": "plant10",
+      "type": "battery",
+      "name": "Еко-батарея Sonnen",
+      "manufacturer": "Sonnen",
+      "model": "ecoLinx Commercial",
+      "capacity": 50,
+      "currentCharge": 35,
+      "status": "online",
+      "efficiency": 93,
+      "cycleCount": 980,
+      "maxCycles": 10000,
+      "lastMaintenance": "2024-12-01",
+      "nextMaintenance": "2025-06-01",
+      "specifications": {
+        "voltage": "600 В",
+        "chemistry": "LiFePO4",
+        "dimensions": "6 x 2 x 2 м",
+        "weight": "12 тонн"
+      }
+    },
+    {
+      "id": "gen-019",
+      "plantId": "plant11",
+      "type": "generator",
+      "name": "Турбогенератор ТГВ-200",
+      "manufacturer": "Електросила",
+      "model": "ТГВ-200-2У3",
+      "capacity": 200,
+      "status": "online",
+      "efficiency": 85,
+      "operatingHours": 76500,
+      "lastMaintenance": "2024-12-15",
+      "nextMaintenance": "2025-06-15",
+      "specifications": {
+        "voltage": "15.75 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "water",
+        "weight": "145 тонн"
+      }
+    },
+    {
+      "id": "gen-020",
+      "plantId": "plant11",
+      "type": "generator",
+      "name": "Парогенератор ПГВ-180",
+      "manufacturer": "Турбоатом",
+      "model": "ПГВ-180-2М",
+      "capacity": 180,
+      "status": "online",
+      "efficiency": 83,
+      "operatingHours": 82100,
+      "lastMaintenance": "2024-11-30",
+      "nextMaintenance": "2025-05-30",
+      "specifications": {
+        "voltage": "14 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "water",
+        "weight": "135 тонн"
+      }
+    },
+    {
+      "id": "bat-011",
+      "plantId": "plant11",
+      "type": "battery",
+      "name": "Промислова батарея CALB",
+      "manufacturer": "CALB",
+      "model": "CA-ESS-100",
+      "capacity": 65,
+      "currentCharge": 44.2,
+      "status": "online",
+      "efficiency": 92,
+      "cycleCount": 2800,
+      "maxCycles": 8000,
+      "lastMaintenance": "2024-10-10",
+      "nextMaintenance": "2025-04-10",
+      "specifications": {
+        "voltage": "1100 В",
+        "chemistry": "LiFePO4",
+        "dimensions": "8.5 x 2.5 x 2.5 м",
+        "weight": "19 тонн"
+      }
+    },
+    {
+      "id": "gen-021",
+      "plantId": "plant12",
+      "type": "generator",
+      "name": "Газотурбінний генератор Ansaldo",
+      "manufacturer": "Ansaldo Energia",
+      "model": "AE-GT26",
+      "capacity": 160,
+      "status": "online",
+      "efficiency": 89,
+      "operatingHours": 31200,
+      "lastMaintenance": "2024-11-10",
+      "nextMaintenance": "2025-05-10",
+      "specifications": {
+        "voltage": "13 кВ",
+        "frequency": "50 Гц",
+        "fuelType": "natural_gas",
+        "weight": "88 тонн"
+      }
+    },
+    {
+      "id": "gen-022",
+      "plantId": "plant12",
+      "type": "generator",
+      "name": "Парогенератор ПГВ-140",
+      "manufacturer": "Електросила",
+      "model": "ПГВ-140-2М",
+      "capacity": 140,
+      "status": "online",
+      "efficiency": 87,
+      "operatingHours": 28900,
+      "lastMaintenance": "2024-12-01",
+      "nextMaintenance": "2025-06-01",
+      "specifications": {
+        "voltage": "11 кВ",
+        "frequency": "50 Гц",
+        "coolingType": "air",
+        "weight": "105 тонн"
+      }
+    },
+    {
+      "id": "bat-012",
+      "plantId": "plant12",
+      "type": "battery",
+      "name": "Енергосховище Northvolt",
+      "manufacturer": "Northvolt",
+      "model": "Voltpack Commercial",
+      "capacity": 85,
+      "currentCharge": 63.75,
+      "status": "online",
+      "efficiency": 96,
+      "cycleCount": 1450,
+      "maxCycles": 12000,
+      "lastMaintenance": "2024-09-25",
+      "nextMaintenance": "2025-03-25",
+      "specifications": {
+        "voltage": "1300 В",
+        "chemistry": "NCM",
+        "dimensions": "10.5 x 2.8 x 2.8 м",
+        "weight": "24 тонни"
+      }
+    }
+  ]
+}
